@@ -14,6 +14,10 @@ class CustomersTest < ApplicationSystemTestCase
     visit customers_url
     click_on "New Customer"
 
+    fill_in "Amount", with: @customer.amount
+    fill_in "Date", with: @customer.date
+    fill_in "Name", with: @customer.name
+    fill_in "Num", with: @customer.num
     click_on "Create Customer"
 
     assert_text "Customer was successfully created"
@@ -24,6 +28,10 @@ class CustomersTest < ApplicationSystemTestCase
     visit customers_url
     click_on "Edit", match: :first
 
+    fill_in "Amount", with: @customer.amount
+    fill_in "Date", with: @customer.date
+    fill_in "Name", with: @customer.name
+    fill_in "Num", with: @customer.num
     click_on "Update Customer"
 
     assert_text "Customer was successfully updated"
